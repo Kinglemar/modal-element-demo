@@ -4,14 +4,12 @@ import { ref } from "vue";
 const modalRef = ref<HTMLDialogElement>();
 
 function popModal() {
-  if (modalRef.value) {
-    modalRef.value.showModal();
-  }
+  if (!modalRef.value) return;
+  modalRef.value.showModal();
 }
 function closeModal() {
-  if (modalRef.value) {
-    modalRef.value.close();
-  }
+  if (!modalRef.value) return;
+  modalRef.value.close();
 }
 </script>
 
